@@ -10,7 +10,7 @@ try {
     $conexion = new PDO(
         "mysql:host=$host;dbname=$db;charset=utf8",
         $user,
-        $password
+        $password, [PDO::ATTR_PERSISTENT => true]
     );
 
     $conexion->setAttribute(
