@@ -37,6 +37,14 @@ if (!password_verify($contrasenaIngresada, $usuario["contrasena"])){
     exit;
 }
 
+session_start();
+$_SESSION["usuario"]=[
+    "id" => $usuario["id"],
+    "nombre" => $usuario["nombre"],
+    "correo" => $usuario["correo"],
+    "rol" => $usuario ["rol"]
+];
+
 echo json_encode(
 [
         "success" =>true,
